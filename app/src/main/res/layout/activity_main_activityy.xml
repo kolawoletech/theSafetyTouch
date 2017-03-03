@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
-    android:background="@drawable/gradient"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient"
     android:orientation="vertical"
-    >
+    tools:context="xyz.himanshu.womensafety.MainActivityy">
 
     <FrameLayout
         android:id="@+id/content"
@@ -26,15 +26,11 @@
             android:text="@string/title_home" />
 
     </FrameLayout>
-    <include layout="@layout/activity_add__numbers"
-        android:visibility="gone"
-        />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:layout_gravity="bottom"
         android:background="?android:attr/windowBackground"
         app:menu="@menu/navigation" />

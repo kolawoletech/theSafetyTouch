@@ -35,7 +35,7 @@ import android.view.WindowManager;
 public class MainActivity extends ActionBarActivity {
     db dbhandler;
     ProgressDialog pd;
-    EditText t;
+    EditText Msg;
 
     public void onclick(View view)
     {
@@ -53,7 +53,7 @@ public class MainActivity extends ActionBarActivity {
     @Override
     public void onBackPressed() {
         new AlertDialog.Builder(this).setIcon(android.R.drawable.ic_dialog_alert).setTitle("Exit")
-                .setMessage("Are you sure?")
+                .setMessage("Are you sure, you want to exit?")
                 .setPositiveButton("yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -92,8 +92,8 @@ public class MainActivity extends ActionBarActivity {
                 Toast.makeText(getApplicationContext(), "GPS is currently off...", Toast.LENGTH_LONG).show();
             }
             //message sending
-            t=(EditText)findViewById(R.id.mess);
-            message=message+"\n"+t.getText().toString();
+            Msg=(EditText)findViewById(R.id.mess);
+            message=message+"\n"+Msg.getText().toString();
 
             try {
                 SmsManager smsManager = SmsManager.getDefault();
@@ -123,7 +123,7 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        t=(EditText)findViewById(R.id.mess);
+        Msg=(EditText)findViewById(R.id.mess);
 
 
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);

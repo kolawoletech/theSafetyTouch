@@ -21,6 +21,6 @@
     <string name="title_activity_tips">Tips</string>
     <string name="title_activity_main_activityy">MainActivityy</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_dashboard">Text Message</string>
+    <string name="title_notifications">Contacts</string>
 </resources>
