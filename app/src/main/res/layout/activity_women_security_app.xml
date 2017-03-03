@@ -18,11 +18,5 @@ android:orientation="vertical"
 
        android:layout_gravity="center"
          />
-    <ImageView
-        android:layout_width="180dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center"
-        android:layout_below="@+id/splash"
-        android:src="@drawable/name"
-        />
+
 </LinearLayout>

@@ -19,6 +19,8 @@ public class Add_Numbers extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add__numbers);
+
+        getSupportActionBar().setTitle("Add Contacts");
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         dbhandler= new db(this,null,null,1);
         if(dbhandler.number()==2) {
