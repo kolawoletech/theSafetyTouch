@@ -73,7 +73,7 @@ public class MainActivity extends ActionBarActivity {
             String phoneNo1 = dbhandler.databaseToPhoneFirst();
             String phoneNo2 = dbhandler.databaseToPhoneSecond();
             Double latitude = 0.0, longitude;
-            String message = "Need Your Help. I am in danger.";
+            String message = "Need Your Help. I am in danger.Please Contact me ASAP";
             LocationManager mlocManager = null;
             LocationListener mlocListener;
             mlocManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -82,7 +82,7 @@ public class MainActivity extends ActionBarActivity {
             if (mlocManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
                 latitude = MyLocationListener.latitude;
                 longitude = MyLocationListener.longitude;
-                message = message + "\n My Location is: Latitude =" + latitude + " and longitude =" + longitude;
+                message = message + "\n My Location is - " + latitude +","+  longitude;
                 Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
                 if (latitude == 0.0) {
                     Toast.makeText(getApplicationContext(), "Currently gps has not found your location....", Toast.LENGTH_LONG).show();
@@ -92,24 +92,25 @@ public class MainActivity extends ActionBarActivity {
                 Toast.makeText(getApplicationContext(), "GPS is currently off...", Toast.LENGTH_LONG).show();
             }
             //message sending
-            Msg=(EditText)findViewById(R.id.mess);
-            message=message+"\n"+Msg.getText().toString();
+
+
+
 
             try {
                 SmsManager smsManager = SmsManager.getDefault();
                 smsManager.sendTextMessage(phoneNo1, null, message, null, null);
-                Toast.makeText(getApplicationContext(), "SMS1 sent.", Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplicationContext(), "SMS1 sent.", Toast.LENGTH_LONG).show();
             } catch (Exception e) {
-                Toast.makeText(getApplicationContext(), "SMS1 faild, please try again.", Toast.LENGTH_LONG).show();
+               // Toast.makeText(getApplicationContext(), "SMS1 faild, please try again.", Toast.LENGTH_LONG).show();
                 e.printStackTrace();
             }
             try {
                 SmsManager smsManager = SmsManager.getDefault();
                 smsManager.sendTextMessage(phoneNo2, null, message, null, null);
-                Toast.makeText(getApplicationContext(), "SMS2 sent.", Toast.LENGTH_LONG).show();
-                Toast.makeText(getApplicationContext(), "You have sent this message: "+message, Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplicationContext(), "SMS2 sent.", Toast.LENGTH_LONG).show();
+               // Toast.makeText(getApplicationContext(), "You have sent this message: "+ message, Toast.LENGTH_LONG).show();
             } catch (Exception e) {
-                Toast.makeText(getApplicationContext(), "SMS2 faild, please try again.", Toast.LENGTH_LONG).show();
+               // Toast.makeText(getApplicationContext(), "SMS2 faild, please try again.", Toast.LENGTH_LONG).show();
                 e.printStackTrace();
             }
         }
@@ -123,7 +124,8 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Msg=(EditText)findViewById(R.id.mess);
+
+
 
 //key board
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
@@ -141,4 +143,5 @@ public class MainActivity extends ActionBarActivity {
         dbhandler.addnumber1(n1);
         dbhandler.addnumber2(n2);
     }
+
 }
