@@ -66,7 +66,7 @@ public class MainActivity extends ActionBarActivity {
                     }
                 }).setNegativeButton("no", null).show();
     }
-
+//btnsend
     public void message(View view)
     {
         if(dbhandler.number()==2) {
@@ -125,7 +125,7 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         Msg=(EditText)findViewById(R.id.mess);
 
-
+//key board
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         dbhandler= new db(this,null,null,1);
         Bundle numbers=getIntent().getExtras();
