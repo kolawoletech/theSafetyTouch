@@ -26,9 +26,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivityy"
-            android:label="@string/title_activity_main_activityy"></activity>
+        <activity android:name=".Msg"></activity>
     </application>
 
 </manifest>

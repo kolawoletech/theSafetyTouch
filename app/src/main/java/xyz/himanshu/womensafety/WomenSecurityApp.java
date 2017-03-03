@@ -18,7 +18,7 @@ public class WomenSecurityApp extends ActionBarActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent(WomenSecurityApp.this, MainActivityy.class);
+                Intent i = new Intent(WomenSecurityApp.this, MainActivity.class);
                 startActivity(i);
                 finish();
             }
