@@ -16,21 +16,6 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import android.app.ProgressDialog;
-import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
-import android.widget.EditText;
-import android.view.View;
-import android.widget.Toast;
-import android.content.Intent;
-import android.telephony.SmsManager;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Context;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.view.WindowManager;
-
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
@@ -85,12 +70,13 @@ public class MainActivity extends ActionBarActivity {
             LocationManager mlocManager = null;
             LocationListener mlocListener;
             mlocManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-            mlocListener = new MyLocationListener();
+            mlocListener  = new MyLocationListener(this);
             mlocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, mlocListener);
             if (mlocManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+
                 latitude = MyLocationListener.latitude;
                 longitude = MyLocationListener.longitude;
-                message = message + "\n My Location is - " + latitude +","+  longitude;
+                message = message + "\n My Location is - " +"https://www.google.com/maps/dir/@"+ latitude +","+  longitude;
                 Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
                 if (latitude == 0.0) {
                     Toast.makeText(getApplicationContext(), "Currently gps has not found your location....", Toast.LENGTH_LONG).show();
